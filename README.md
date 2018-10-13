@@ -1,5 +1,5 @@
 # MIGRAR
-### MIGRAR DE REDHAT A UBUNTU
+### MIGRAR DE REDHAT A UBUNTU/ CENTOS
 Empezaremos con la migación comprobando la versión de RedHat que tenemos.
 1. lo comprobamos con:
   ######  cat /etc/redhat-release
@@ -11,10 +11,7 @@ Empezaremos con la migación comprobando la versión de RedHat que tenemos.
 
   ######  mkdir –p /temp/centos
 
-
-
-########################################################
-Procedemos a descargar los paquetes necesarios para la instalación de CentOS en el directorio temporal que hemos creado.
+4. Procedemos a descargar los paquetes necesarios para la instalación de CentOS en el directorio temporal que hemos creado.
 
 Una vez descargados todos los paquetes necesarios para la instalación, importaremos la clave GPG (GPG KEY) apropiada para la versión de CentOS que estemos usando con el comando:
 
