@@ -9,7 +9,7 @@ Empezaremos con la migación comprobando la versión de RedHat que tenemos.
 
 3. Creamos una carpeta temporal en la cual descargaremos los paquetes necesarios para la migración.
 
-  ######  mkdir –p /temp/centos
+  ######  mkdir –p /temp/Ubuntu
 
 4. Procedemos a descargar los paquetes necesarios para la instalación de CentOS en el directorio temporal que hemos creado.
 
