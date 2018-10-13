@@ -15,7 +15,8 @@ Empezaremos con la migación comprobando la versión de RedHat que tenemos.
 
 Una vez descargados todos los paquetes necesarios para la instalación, importaremos la clave GPG (GPG KEY) ubuntu que estemos usando con el comando:
 
-    cd ~/.ss y ssh-keygen -e -f id_rsa > id_sa.pub
+    cd ~/.ss 
+    ssh-keygen -e -f id_rsa > id_sa.pub
 
 Ahora procederemos a eliminar los paquetes de RedHat con el commando:
 
