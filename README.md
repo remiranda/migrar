@@ -8,10 +8,10 @@ Empezaremos con la migación comprobando la versión de RedHat que tenemos.
 2.  lanzando el comando yum clean all para comprobar que no haya ningún paquete a media instalación, ni errores en alguna instalación previa de algún paquete.
 
 3. Creamos una carpeta temporal en la cual descargaremos los paquetes necesarios para la migración.
-  mkdir –p /temp/Ubuntu rpm –import RPM-GPG-KEY-CentOS-6
 
-    mkdir –p /temp/Ubuntu 
-  
+    mkdir –p /temp/centos
+
+
 ########################################################
 Procedemos a descargar los paquetes necesarios para la instalación de CentOS en el directorio temporal que hemos creado.
 
