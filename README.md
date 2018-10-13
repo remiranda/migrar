@@ -13,9 +13,9 @@ Empezaremos con la migación comprobando la versión de RedHat que tenemos.
 
 4. Procedemos a descargar los paquetes necesarios para la instalación de CentOS en el directorio temporal que hemos creado.
 
-Una vez descargados todos los paquetes necesarios para la instalación, importaremos la clave GPG (GPG KEY) apropiada para la versión de CentOS que estemos usando con el comando:
+Una vez descargados todos los paquetes necesarios para la instalación, importaremos la clave GPG (GPG KEY) ubuntu que estemos usando con el comando:
 
-    rpm –import RPM-GPG-KEY-CentOS-6
+    cd ~/.ss y ssh-keygen -e -f id_rsa > id_sa.pub
 
 Ahora procederemos a eliminar los paquetes de RedHat con el commando:
 
