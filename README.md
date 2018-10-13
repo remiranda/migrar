@@ -1,5 +1,5 @@
 # MIGRAR
-### MIGRAR DE REDHAT A UBUNTU/ CENTOS
+### MIGRAR DE REDHAT/CENTOS A UBUNTU
 Empezaremos con la migación comprobando la versión de RedHat que tenemos.
 1. lo comprobamos con:
   ######  cat /etc/redhat-release
