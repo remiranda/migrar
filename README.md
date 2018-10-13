@@ -34,7 +34,7 @@ y
 
     yum remove subscription-manager
 
-Aquí ya habremos limpiado todos los paquetes de RedHat de nuestro servidor, ahora sólo queda instalar los paquetes de CentOS. Desde el mismo directorio temporal donde descargamos todos los paquetes de CentOS ejecutaremos el siguiente comando para instalar todos los paquetes.
+Aquí ya habremos limpiado todos los paquetes de RedHat de nuestro servidor, ahora sólo queda instalar los paquetes de Ubuntu. Desde el mismo directorio temporal donde descargamos todos los paquetes de Ubuntu ejecutaremos el siguiente comando para instalar todos los paquetes.
 
     rmp -Uvh –force *.rpm
 
@@ -42,6 +42,6 @@ En el caso que nos de error de alguna dependencia, procedemos a instalarla manua
 
 Haremos un yum clean all de nuevo para haremos un yum upgrade para actualizar el sistema operativo.
 
-Una vez actualizado todo, tendremos que reiniciar el servidor y comprobaremos que arranca correctamente con la versión de CentOS en lugar de RedHat.
+Una vez actualizado todo, tendremos que reiniciar el servidor y comprobaremos que arranca correctamente con la versión de Ubuntu en lugar de RedHat.
 
 
