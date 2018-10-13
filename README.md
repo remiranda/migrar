@@ -9,7 +9,8 @@ Empezaremos con la migación comprobando la versión de RedHat que tenemos.
 
 3. Creamos una carpeta temporal en la cual descargaremos los paquetes necesarios para la migración.
 
-    mkdir –p /temp/centos
+  ######  mkdir –p /temp/centos
+
 
 
 ########################################################
