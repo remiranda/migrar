@@ -1,0 +1,88 @@
+—
+– name: install ubuntu and centos
+  hosts: all
+  vars:
+  date: “{{ lookup(‘pipe’, ‘date +%Y%m%d-%H%M’) }}”
+  tasks:
+  – block:
+
+– name: verify the sysstat in ubuntu
+  command: dpkg-query -W sysstat
+  register: package
+  when: ansible_distribution == “Ubuntu”
+
+– name: print jason output in ubuntu
+  debug: var=package
+
+– name: install sysstat if not installed in ubuntu
+  command: apt-get install sysstat
+  when: package.stdout != “sysstat*”
+
+– name: copy sysstat file in ubuntu
+  copy:
+  src: /etc/default/sysstat
+  dest: /etc/default/sysstat.{{ date }}
+
+– name: replace the word in the file in ubuntu
+  replace:
+  dest: /etc/default/sysstat
+  regexp: “false”
+  replace: “true”
+
+– name: configure sysstat file in cron.d in ubuntu
+  copy:
+  src: /etc/cron.d/sysstat
+  dest: /etc/cron.d/sysstat.{{ date }}
+
+– name: Add activity every 2 mins everyday in ubuntu
+  lineinfile:
+  path: /etc/cron.d/sysstat
+  line: “*/2 * * * * root command -v debian-sa1 > /dev/null && debian-sa1 1 1”
+  regexp: ‘debian-sa1 1 1’
+  backup: yes
+
+– name: restart the sysstat service in ubuntu
+  service: name=sysstat state=restarted
+  rescue:
+
+– name: verify the sysstat in centos
+  command: rpm -qa sysstat
+  register: package
+  when: ansible_distribution == “CentOS”
+
+– name: print jason output in centos
+  debug: var=package
+
+– name: sysstat package is not installed in centos
+  debug: msg=”Sysstat package is not installed in this server”
+  when: package.stdout == “”
+
+– name: sysstat package has been installed in centos
+  debug: msg=”sysstat package has been installed in this server”
+    when: package.stdout != “”
+
+– name: install sysstat package in the centos server
+  yum: name=sysstat state=latest
+  when: package.stdout == “”
+
+– name: start the sysstat service in centos
+  service: name=sysstat state=started enabled=yes
+  when: package.stdout != “”
+
+– name: install python dependencies in centos
+  yum: name=libselinux-python state=latest
+
+– name: configure sysstat file in cron.d in centos
+  copy:
+  src: /etc/cron.d/sysstat
+  dest: /etc/cron.d/sysstat.{{ date }}
+
+– name: Add activity every 2 mins everyday in centos
+  lineinfile:
+  path: /etc/cron.d/sysstat
+  line: “2 * * * * root /usr/lib64/sa/sa1 1 1”
+  regexp: ‘sa1 1 1’
+  backup: yes
+  
+– name: restart the sysstat service in centos
+  service: name=sysstat state=restarted
