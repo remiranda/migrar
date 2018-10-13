@@ -11,7 +11,7 @@ Empezaremos con la migación comprobando la versión de RedHat que tenemos.
 
   ######  mkdir –p /temp/Ubuntu
 
-4. Procedemos a descargar los paquetes necesarios para la instalación de CentOS en el directorio temporal que hemos creado.
+4. Procedemos a descargar los paquetes necesarios para la instalación de Ubuntu en el directorio temporal que hemos creado.
 
 Una vez descargados todos los paquetes necesarios para la instalación, importaremos la clave GPG (GPG KEY) ubuntu que estemos usando con el comando:
 
